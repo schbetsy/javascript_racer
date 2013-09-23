@@ -1,13 +1,18 @@
 <div class="container">
   <% TRACK_LENGTH = 20 %>
+  <script>
+    var track_length = <%= TRACK_LENGTH %>
+  </script>
 
   <table class="racer_table">
     <tr id="player1_strip">
+      <td class="player-label">Player 1: </td>
       <% TRACK_LENGTH.times do %>
         <td></td>
       <% end %>
     </tr>
     <tr id="player2_strip">
+      <td class="player-label">Player 2: </td>
       <% TRACK_LENGTH.times do %>
         <td></td>
       <% end %>
