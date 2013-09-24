@@ -26,9 +26,10 @@ Game.prototype.advance_player = function(player) {
 };
 
 Game.prototype.respond_to_keys = function(keypress) {
-  console.log(keypress);
   for (var i = 0; i < this.players.length; i++){
-    if (this.players[i].go_key === keypress) this.advance_player;
+    if (this.players[i].go_key === keypress) {
+      this.advance_player(this.players[i]);
+    };
   }
 };
 
