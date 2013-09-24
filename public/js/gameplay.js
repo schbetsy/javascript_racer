@@ -1,4 +1,6 @@
-function Game() {
+// Game functions //////////////////////////
+
+function Game(players) {
     this.start_time = $.now();
 }
 Game.prototype.end_game = function() {
@@ -9,16 +11,26 @@ Game.prototype.advance_player = function(player) {
 
 };
 
-function Player() {
+// Player functions ///////////////////////
+
+function Player(tr_id) {
   this.position = 2;
+  this.tr_id = tr_id;
 }
+Player.prototype.position_selector = function() {
+  return tr_id + " td:nth-child("+this.position+")";
+};
+
+// Controller //////////////////////////////////
 
 $(document).ready(function() {
     
     $('td:nth-child(2)').attr('class','active');
     
-    var p1 = new Player();
-    var p2 = new Player();
+    var p1 = new Player("player1_strip");
+    var p2 = new Player("player2_strip");
+
+    var game = new Game([p1, p2]);
 
   $(document).on('keyup', function(event) {
     //Q = 81, P = 80
