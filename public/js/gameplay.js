@@ -20,16 +20,25 @@ Game.prototype.end_game = function(winner) {
 };
 
 Game.prototype.advance_player = function(player) {
-  $(player.position_selector()).removeClass('active');
   player.position++;
-  $(player.position_selector()).attr('class','active');
+  this.render();
+  if (player.position > track_length+1){
+    this.end_game(player);
+  }
+};
+
+Game.prototype.render = function() {
+  for (var i = 0; i < this.players.length; i++) {
+    $(this.players[i].tr_id + " td").removeClass('active');
+    $(this.players[i].position_selector()).attr('class','active');
+  }
 };
 
 Game.prototype.respond_to_keys = function(keypress) {
   for (var i = 0; i < this.players.length; i++){
     if (this.players[i].go_key === keypress) {
       this.advance_player(this.players[i]);
-    };
+    }
   }
 };
 
