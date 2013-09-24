@@ -5,9 +5,6 @@ end
 
 get '/results/:id' do
   @game = Game.find(params[:id])
-  @winner = Player.find(@game.winner_id)
-  @player1 = @game.players.first
-  @player2 = @game.players.last
   erb :game_results
 end
 
@@ -21,13 +18,9 @@ post '/startgame' do
 end
 
 post '/game_results' do
-  params[:players].each do |p|
-    @players << Player.find(p)
-  end
-  # @player1 = Player.find(params[:p1])
-  # @player2 = Player.find(params[:p2])
   @game = Game.create(duration: params[:duration], winner_id: params[:winner])
-  # @game.players << [@player1, @player2]
-  @game.players = @players
+  params[:players].split(",").each do |pl|
+    @game.players << Player.find(pl.to_i)
+  end
   erb :game_results, layout: false
 end

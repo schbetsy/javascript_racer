@@ -12,8 +12,10 @@ Game.prototype.end_game = function(winner) {
     $(document).unbind('keyup');
     end_time = $.now();
     this.duration = (end_time - this.start_time)/1000;
+    var ids = this.get_player_ids().toString();
+    console.log(ids);
     $.post('/game_results',
-            {players: this.get_player_ids(), winner: winner.player_id, duration: this.duration},
+            {players: ids, winner: winner.player_id, duration: this.duration},
             function(result) {
                 $(".container").append(result);
      });
