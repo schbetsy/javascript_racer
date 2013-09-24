@@ -1,7 +1,9 @@
-<div class="container">
+
   <% TRACK_LENGTH = 20 %>
   <script>
     var track_length = <%= TRACK_LENGTH %>
+    var player1 = <%= @p1.id %>
+    var player2 = <%= @p2.id %>
   </script>
 
   <table class="racer_table">
@@ -19,4 +21,4 @@
     </tr>
   </table>
 
-</div>
+
