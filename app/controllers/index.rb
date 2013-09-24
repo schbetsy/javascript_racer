@@ -24,6 +24,7 @@ post '/game_results' do
   @player1 = Player.find(params[:p1])
   @player2 = Player.find(params[:p2])
   @game = Game.create(duration: params[:duration], winner_id: params[:winner])
+  # interesting syntax below:qu
   @game.players << [@player1, @player2]
   erb :game_results, layout: false
 end
