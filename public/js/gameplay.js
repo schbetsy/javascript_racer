@@ -13,10 +13,19 @@ Game.prototype.end_game = function(winner) {
     end_time = $.now();
     this.duration = (end_time - this.start_time)/1000;
     $.post('/game_results',
-            {p1: this.players[0].player_id, p2:this.players[1].player_id, winner: winner.player_id, duration: this.duration},
+            {players: this.get_player_ids(), winner: winner.player_id, duration: this.duration},
             function(result) {
                 $(".container").append(result);
      });
+};
+
+Game.prototype.get_player_ids = function(){
+    var player_ids = [];
+    for (var i = 0; i < this.players.length; i++) {
+        player_ids[i] = this.players[i].player_id;
+    }
+    console.log(player_ids);
+    return player_ids;
 };
 
 Game.prototype.advance_player = function(player) {
