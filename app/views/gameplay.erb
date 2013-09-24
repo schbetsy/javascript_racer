@@ -1,5 +1,9 @@
 <script src="/js/gameplay.js"></script>
   <% TRACK_LENGTH = 20 %>
+  <% if @players %>
+    <% @p1 = @players[0] %>
+    <% @p2 = @players[1] %>
+  <% end %>
   <script>
     var track_length = <%= TRACK_LENGTH %>
     var player1 = <%= @p1.id %>

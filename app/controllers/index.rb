@@ -17,6 +17,14 @@ post '/startgame' do
   erb :gameplay
 end
 
+post '/restart_game' do
+  @players = []
+  params[:players].values.each do |pl|
+    @players << Player.find(pl.to_i)
+  end
+  erb :gameplay
+end
+
 post '/game_results' do
   @game = Game.create(duration: params[:duration], winner_id: params[:winner])
   params[:players].split(",").each do |pl|
