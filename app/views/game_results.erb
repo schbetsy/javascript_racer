@@ -4,7 +4,7 @@
      vs. <%= pl.initials %>
   <% end %>
 </h2>
-<h3><%= Player.find(@game.winner_id).initials %> finished in <%= @game.duration%> seconds for the win!</h3>
+<h3><%= Player.find(@game.winner).initials %> finished in <%= @game.duration%> seconds for the win!</h3>
 <p>You can come back to these results any time at this location: <a href="/results/<%= @game.id%>">localhost:9393/results/<%= @game.id%></a></p>
 <p>
   <form action="/restart_game" method="POST">

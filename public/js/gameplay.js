@@ -8,6 +8,7 @@ function Game(players) {
         $(this.players[i].position_selector()).attr('class','active');
     }
 }
+
 Game.prototype.end_game = function(winner) {
     $(document).unbind('keyup');
     end_time = $.now();
