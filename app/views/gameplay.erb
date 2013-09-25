@@ -4,16 +4,6 @@
     var track_length = <%= TRACK_LENGTH %>
   </script>
 
-  <% if @players %>
-    <% @p1 = @players[0] %>
-    <% @p2 = @players[1] %>
-  <% else %>
-    <% @players = [] %>
-    <% @players[0] = @p1 %>
-    <% @players[1] = @p2 %>
-  <% end %>
-
-
   <table class="racer_table" data-num-players="<%= @players.length %>">
     <% @players.length.times do |row| %>
       <tr id="player<%= row %>" data-id="<%= @players[row].id %>">
