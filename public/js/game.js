@@ -7,4 +7,20 @@
         $('#player2_strip td:nth-child('+this.place2+')').attr('class','active')
     }
 
-    
+
+   Game.prototype.end = function(winner, start_time) 
+    {
+        $(document).unbind('keyup');
+        var end_time = $.now();
+        var duration = (end_time - start_time)/1000
+        $.post('/game_results', {p1: player1, p2: player2, winner: winner, duration: duration}, function(result) 
+        {
+            $(".container").append(result);
+        });
+    }
+
+    function Game(p1,p2)
+   {
+   	this.p1 = p1
+   	this.p2 = p2
+   }

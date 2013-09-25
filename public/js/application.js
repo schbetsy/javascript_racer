@@ -1,21 +1,13 @@
 $(document).ready(function() 
 {
-    function end_game(winner, start_time) 
-    {
-        $(document).unbind('keyup');
-        var end_time = $.now();
-        var duration = (end_time - start_time)/1000
-        $.post('/game_results', {p1: player1, p2: player2, winner: winner, duration: duration}, function(result) 
-        {
-            console.log(result)
-            $(".container").append(result);
-        });
-    }
+    
 }
 
 
 
-function Player(initials){}
+function Player(initials){
+    this.initials = initials
+}
 
 function Game(p1,p2)
 {
