@@ -1,7 +1,9 @@
 <script src="/js/gameplay.js"></script>
   <% TRACK_LENGTH = 20 %>
+  <%= GO_KEYS %>
   <script>
     var track_length = <%= TRACK_LENGTH %>
+    var go_keys = <%= GO_KEYS %>
   </script>
 
   <table class="racer_table" data-num-players="<%= @players.length %>">

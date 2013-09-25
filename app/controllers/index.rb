@@ -1,3 +1,5 @@
+GO_KEYS = [81, 80, 90, 77, 54, 32]
+# keys =  [q , p , z , m , 6, space]
 #== GET ====================
 get '/' do
   erb :index
@@ -14,6 +16,7 @@ end
 post '/startgame' do
   @players = []
   params.values.each do |pl|
+    next if pl == ""
     @players << Player.find_or_create_by_initials(pl)
   end
   erb :gameplay

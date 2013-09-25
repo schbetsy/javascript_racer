@@ -71,7 +71,7 @@ Player.prototype.position_selector = function() {
 // Controller //////////////////////////////////
 
 function get_player_info(i) {
-    var go_keys = [81, 80];
+    // var go_keys = [81, 80];
     var row = "#player" + i;
     var id = $(row).data('id');
     return new Player(id, go_keys[i], row);
