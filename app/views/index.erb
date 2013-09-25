@@ -1,11 +1,16 @@
 <script src="/js/input_names.js"></script>
+<script>  
+  var key_names = <%= KEY_NAMES %>;
+</script>
 <div class="intro">
   <h3>RAAAAAAACE!</h3>
 
 <form id="game-info" action="/startgame" method="POST">
-  <input type="text" name="1" data-id="1" placeholder="Player 1"></input>
+  <input type="text" class="player" name="1" data-id="1" placeholder="Player 1"></input>
+  <p class="instruction" data-num="1"></p>
   <h4>vs.</h4>
-  <input type="text" name="2" data-id="2" placeholder="Player 2"></input>
+  <input type="text" class="player" name="2" data-id="2" placeholder="Player 2"></input>
+  <p class="instruction" data-num="2"></p>
 
   <button class="add-player" type="button">Add Player</button>
   <button class="start-game" type="submit">GO!</button>

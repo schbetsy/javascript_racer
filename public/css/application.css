@@ -29,15 +29,21 @@ th {
 
 .intro {
   margin: auto;
-  /*font-family: "Dubtronic-Solid";*/
+  font-family: "Dubtronic-Solid";
 }
 
 .intro h4 {
-  font-size: 130px;
+  font-size: 100px;
   margin: -5px;
 }
 .intro h3 {
   font-size: 80px;
+  margin: 10px;
+}
+.intro p {
+  display: inline;
+  font-family: sans-serif;
+  float: right;
 }
 
 .intro input {
