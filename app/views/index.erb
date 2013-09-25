@@ -3,13 +3,12 @@
   <h3>RAAAAAAACE!</h3>
 
 <form id="game-info" action="/startgame" method="POST">
-  <label for="p1"></label>
-  <input type="text" name="p1[initials]" id="p1" placeholder="Player 1"></input>
+  <input type="text" name="1" data-id="1" placeholder="Player 1"></input>
   <h4>vs.</h4>
-  <label for="p2"></label>
-  <input type="text" name="p2[initials]" id="p2"placeholder="Player 2"></input>
+  <input type="text" name="2" data-id="2" placeholder="Player 2"></input>
 
-  <input class="button" type="submit" value="go!">
+  <button class="add-player" type="button">Add Player</button>
+  <button class="start-game" type="submit">GO!</button>
 
 </form>
 </div>
