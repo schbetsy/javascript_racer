@@ -1,5 +1,6 @@
-GO_KEYS = [81, 80, 90, 77, 54, 32]
-# keys =  [q , p , z , m , 6, space]
+GO_KEYS =   [ 81, 80, 90, 77, 54, 32]
+KEY_NAMES = ['Q','P','Z','M','6','space']
+
 #== GET ====================
 get '/' do
   erb :index

@@ -58,7 +58,7 @@ Game.prototype.respond_to_keys = function(keypress) {
 
 function Player(player_id, go_key, tr_id) {
     this.player_id = player_id;
-    this.position = 2;
+    this.position = 3;
     this.tr_id = tr_id;
     this.go_key = go_key;
 }
@@ -71,7 +71,6 @@ Player.prototype.position_selector = function() {
 // Controller //////////////////////////////////
 
 function get_player_info(i) {
-    // var go_keys = [81, 80];
     var row = "#player" + i;
     var id = $(row).data('id');
     return new Player(id, go_keys[i], row);
