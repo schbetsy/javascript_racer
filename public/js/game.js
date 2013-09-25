@@ -1,4 +1,4 @@
-  Game.prototype.render = function(place1,place2){
+ Game.prototype.render = function(place1,place2){
         this.place1=place1+1
         this.place2=place2+1
         $("#player1_strip td").removeClass('active')
@@ -19,8 +19,8 @@
         });
     }
 
-    function Game(p1,p2)
+   function Game(p1,p2)
    {
-   	this.p1 = p1
-   	this.p2 = p2
+    this.p1 = p1
+    this.p2 = p2
    }
