@@ -27,7 +27,6 @@ Game.prototype.get_player_ids = function(){
     for (var i = 0; i < this.players.length; i++) {
         player_ids[i] = this.players[i].player_id;
     }
-    console.log(player_ids);
     return player_ids;
 };
 
@@ -71,13 +70,21 @@ Player.prototype.position_selector = function() {
 /////////////////////////////////////////////////
 // Controller //////////////////////////////////
 
-$(document).ready(function() {
-    
-    var p1 = new Player(player1, 81, "#player1_strip");
-    var p2 = new Player(player2, 80, "#player2_strip");
-    //Q = 81, P = 80
+function get_player_info(i) {
+    var go_keys = [81, 80];
+    var row = "#player" + i;
+    var id = $(row).data('id');
+    return new Player(id, go_keys[i], row);
+}
 
-    var game = new Game([p1, p2]);
+
+$(document).ready(function() {
+    var num_players = $(".racer_table").data("num-players");
+    var players = [];
+    for (var i = 0; i < num_players; i++) {
+        players.push(get_player_info(i));
+    }
+    var game = new Game(players);
 
     $(document).on('keyup', function(event) {
         game.respond_to_keys(event.which);

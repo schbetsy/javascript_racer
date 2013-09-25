@@ -12,13 +12,11 @@
 
   <script>
     var track_length = <%= TRACK_LENGTH %>
-    var player1 = <%= @p1.id %>
-    var player2 = <%= @p2.id %>
   </script>
 
-  <table class="racer_table">
+  <table class="racer_table" data-num-players="<%= @players.length %>">
     <% @players.length.times do |row| %>
-      <tr id="player<%= row %>_strip">
+      <tr id="player<%= row %>" data-id="<%= @players[row].id %>">
         <td class="player-label"><%= @players[row].initials %>: </td>
         <% TRACK_LENGTH.times do %>
           <td></td>
