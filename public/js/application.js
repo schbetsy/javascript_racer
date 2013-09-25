@@ -8,6 +8,24 @@ function end_game(winner, start_time) {
    });
 }
 
+
+
+function Player(initials){}
+
+function Game(p1,p2){}
+
+Game.prototype.render = function(p1,p2,place1,place2){
+     $('td:nth-child(2)').attr('class','active')
+     
+  // Updates DOM to reflect current game state
+  // Does not modify game state at all
+}
+
+
+
+
+
+
 $(document).ready(function() {
     
     $('td:nth-child(2)').attr('class','active')
