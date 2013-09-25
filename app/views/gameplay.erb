@@ -1,5 +1,8 @@
 <script src="/js/gameplay.js"></script>
   <% TRACK_LENGTH = 20 %>
+  <script>
+    var track_length = <%= TRACK_LENGTH %>
+  </script>
 
   <% if @players %>
     <% @p1 = @players[0] %>
@@ -10,9 +13,6 @@
     <% @players[1] = @p2 %>
   <% end %>
 
-  <script>
-    var track_length = <%= TRACK_LENGTH %>
-  </script>
 
   <table class="racer_table" data-num-players="<%= @players.length %>">
     <% @players.length.times do |row| %>
