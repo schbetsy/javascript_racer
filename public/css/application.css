@@ -1,7 +1,13 @@
+@font-face{
+  font-family: "Dubtronic-Solid";
+  src: url("../Dubtronic/Dubtronic-Solid.otf");
+}
+
 .container {
   margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
+  width: 70%;
+  /*padding: 0px 20px 20px 20px;*/
+  margin: auto;
 }
 th {
   text-align: left;
@@ -19,4 +25,46 @@ th {
 
 .player-label {
   width: 90px;
+}
+
+.intro {
+  margin: auto;
+  font-family: "Dubtronic-Solid";
+}
+
+.intro h4 {
+  font-size: 100px;
+  margin: -5px;
+}
+.intro h3 {
+  font-size: 80px;
+  margin: 10px;
+}
+.intro p {
+  display: inline;
+  font-family: sans-serif;
+  float: right;
+}
+
+.intro input {
+  font-size: 30px;
+  width: 90%;
+  text-align: center;
+}
+
+.intro .button {
+ border: none;
+ width: auto;
+ padding: 10px;
+ margin-top: 20px;
+}
+
+.intro form{
+  background: -webkit-linear-gradient(top, #000D5B, #847C87);
+  margin: auto;
+  padding: 30px;
+}
+
+body {
+  background-image: 
 }

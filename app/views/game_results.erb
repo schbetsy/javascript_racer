@@ -1,5 +1,17 @@
-<h2>In the epic race between <%= @player1.initials %> and <%= @player2.initials %>...</h2>
-<h3><%= Player.find(@game.winner_id).initials %> finished in <%= @game.duration%> seconds for the win!</h3>
+<h2>In the epic race of
+  <%= @game.players.first.initials %>
+  <% @game.players[1..-1].each do |pl| %>
+     vs. <%= pl.initials %>
+  <% end %>
+</h2>
+<h3><%= Player.find(@game.winner).initials %> finished in <%= @game.duration%> seconds for the win!</h3>
 <p>You can come back to these results any time at this location: <a href="/results/<%= @game.id%>">localhost:9393/results/<%= @game.id%></a></p>
-<p><a href="/">Click here</a> to play again with the same players</p>
-<p><a href="/">Click here</a> to choose new players</p>
+<p>
+  <form action="/restart_game" method="POST">
+    <% @game.players.each_with_index do |pl,i| %>
+       <input type="hidden" name="players[<%= i%>]" value="<%= pl.id %>">
+    <% end %>
+    <input type="submit" value="Click here">
+  </form>
+to play again with the same players</p>
+<p><a href="/">Click here</a> to choose new players and play again</p>

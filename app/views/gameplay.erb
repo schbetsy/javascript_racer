@@ -1,24 +1,21 @@
-
+<script src="/js/gameplay.js"></script>
   <% TRACK_LENGTH = 20 %>
   <script>
     var track_length = <%= TRACK_LENGTH %>
-    var player1 = <%= @p1.id %>
-    var player2 = <%= @p2.id %>
+    var go_keys = <%= GO_KEYS %>
   </script>
 
-  <table class="racer_table">
-    <tr id="player1_strip">
-      <td class="player-label"><%= @p1.initials %>: </td>
-      <% TRACK_LENGTH.times do %>
-        <td></td>
-      <% end %>
-    </tr>
-    <tr id="player2_strip">
-      <td class="player-label"><%= @p2.initials %>: </td>
-      <% TRACK_LENGTH.times do %>
-        <td></td>
-      <% end %>
-    </tr>
+  <table class="racer_table" data-num-players="<%= @players.length %>">
+    <% @players.length.times do |row| %>
+      <tr id="player<%= row %>" data-id="<%= @players[row].id %>">
+        <td>Press <%= KEY_NAMES[row] %> !</td>
+        <td class="player-label"><%= @players[row].initials %>: </td>
+        <% TRACK_LENGTH.times do %>
+          <td></td>
+        <% end %>
+      </tr>
+    <% end %>
   </table>
+
 
 

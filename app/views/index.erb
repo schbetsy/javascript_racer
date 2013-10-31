@@ -1,12 +1,19 @@
-<h3>RAAAAAAAAAACE!</h3>
+<script src="/js/input_names.js"></script>
+<script>  
+  var key_names = <%= KEY_NAMES %>;
+</script>
+<div class="intro">
+  <h3>RAAAAAAACE!</h3>
 
 <form id="game-info" action="/startgame" method="POST">
-  <label for="p1">Player 1: </label>
-  <input type="text" name="p1[initials]" id="p1"></input>
+  <input type="text" class="player" name="1" data-id="1" placeholder="Player 1"></input>
+  <p class="instruction" data-num="1"></p>
+  <h4>vs.</h4>
+  <input type="text" class="player" name="2" data-id="2" placeholder="Player 2"></input>
+  <p class="instruction" data-num="2"></p>
 
-  <label for="p2">Player 2: </label>
-  <input type="text" name="p2[initials]" id="p2"></input>
-
-  <input type="submit" value="go!">
+  <button class="add-player" type="button">Add Player</button>
+  <button class="start-game" type="submit">GO!</button>
 
 </form>
+</div>
